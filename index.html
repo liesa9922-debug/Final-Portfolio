@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ayushi Sharma | Professional Portfolio</title>
+    <style>
+        /* ==========================================================
+           1. UNIVERSAL SELECTOR (*)
+           Reset padding, margin, and standard box-sizing
+           ========================================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* ==========================================================
+           2. ELEMENT SELECTORS
+           Clean typography and executive slate background
+           ========================================================== */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: rgb(241, 245, 249); /* Modern cool slate */
+            color: #1e293b;                       /* Deep navy-charcoal for high readability */
+            padding: 30px 15px;
+        }
+
+        header {
+            width: 100%;
+            height: auto;
+            text-align: center;
+            padding: 36px 20px 28px 20px;
+            background-color: #0f172a;            /* Deep midnight header */
+            background-image: url('header-banner.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+
+        main {
+            padding: 28px 32px;
+        }
+
+        section, article {
+            margin-bottom: 28px;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background-color: #e2e8f0;
+            margin: 20px 0px;
+        }
+
+        pre {
+            background-color: #f8fafc;
+            color: #334155;
+            padding: 14px 18px;
+            font-size: 13px;
+            line-height: 1.6;
+            border-left: 4px solid #2563eb;
+            border-radius: 4px;
+            margin-top: 10px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 14px;
+            background-color: #ffffff;
+        }
+
+        caption {
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 10px;
+            text-align: left;
+            color: #475569;
+            letter-spacing: 0.3px;
+        }
+
+        thead {
+            background-color: #f1f5f9;
+        }
+
+        aside {
+            /* Alpha Channel (RGBA) for clean highlight box */
+            background-color: rgba(37, 99, 235, 0.06);
+            padding: 16px 20px;
+            border-left: 4px solid #2563eb;
+            border-radius: 4px;
+            margin-top: 24px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0px 10px 0px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        /* ==========================================================
+           3. CLASS SELECTORS (.)
+           ========================================================== */
+        .container {
+            width: 860px;
+            margin: 0px auto;
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Circular Profile Photo */
+        .profile-img {
+            display: block;
+            margin: 0 auto 14px auto;
+            width: 130px;
+            height: 130px;
+            min-width: 130px;
+            min-height: 130px;
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+            margin-bottom: 14px;
+            background-color: #334155;
+        }
+
+        .highlight {
+            color: #2563eb;
+            font-weight: 600;
+        }
+
+        .status-badge {
+            visibility: visible;
+            display: inline-block;
+            background-color: rgba(16, 185, 129, 0.15); /* Soft emerald */
+            color: #047857;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-top: 8px;
+        }
+
+        .card-box {
+            background-color: #fafbfc;
+            padding: 18px 22px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+        }
+
+        .action-link {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .action-link:hover {
+            text-decoration: underline;
+        }
+
+        .draft-note {
+            visibility: hidden;
+            height: 0px;
+        }
+
+        /* ==========================================================
+           4. ID SELECTORS (#)
+           ========================================================== */
+        #about {
+            background-color: #ffffff;
+        }
+
+        #academics {
+            margin-top: 24px;
+        }
+
+        #skills {
+            background-color: #ffffff;
+        }
+
+        #certificates {
+            background-color: #ffffff;
+        }
+
+        /* ==========================================================
+           5. GROUP SELECTORS (,)
+           ========================================================== */
+        h1, h2, h3 {
+            color: #0f172a;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 18px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 6px;
+            margin-bottom: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        table, th, td {
+            border: 1px solid #cbd5e1;
+        }
+
+        th, td {
+            padding: 12px 14px;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        th {
+            color: #334155;
+            font-weight: 600;
+        }
+
+        /* ==========================================================
+           6. DESCENDANT SELECTORS (ancestor descendant)
+           ========================================================== */
+        header h1 {
+            font-size: 28px;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+            color: #ffffff;
+        }
+
+        header p {
+            color: #94a3b8;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        #skills ul {
+            margin-left: 24px;
+            margin-top: 10px;
+            color: #334155;
+        }
+
+        #skills li {
+            margin-bottom: 6px;
+            line-height: 1.5;
+        }
+
+        #skills ol {
+            margin-left: 20px;
+            margin-top: 6px;
+            color: #475569;
+        }
+
+        #certificates ol {
+            margin-left: 24px;
+            margin-top: 10px;
+            color: #334155;
+        }
+
+        #certificates li {
+            margin-bottom: 8px;
+        }
+
+        footer p {
+            font-size: 13px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Top Header with Circle Photo -->
+        <header>
+            <img src="ayushi.jpeg" alt="Ayushi Sharma" class="profile-img">
+            <h1>Ayushi Sharma</h1>
+            <p>Computer Science & Engineering | Cybersecurity Specialization</p>
+            <p><small>Roll No: 202510101180004</small></p>
+            <span class="status-badge">Active Student</span>
+        </header>
+
+        <main>
+            <!-- About Me Section -->
+            <section id="about" class="card-box">
+                <h2>About Me</h2>
+                <p>Hello! I am a B.Tech Computer Science student specializing in <span class="highlight">Cybersecurity</span> with an active focus on <span class="highlight">Full Stack Web Development</span>.</p>
+                <pre>"Code is like humor.
+When you have to explain it, it's bad."</pre>
+            </section>
+
+            <!-- Academic Qualifications Table -->
+            <section id="academics">
+                <h2>Academic Qualifications</h2>
+                <table>
+                    <caption>Verified Academic Records</caption>
+                    <thead>
+                        <tr>
+                            <th>Level / Degree</th>
+                            <th>Board / University</th>
+                            <th>Passing Year</th>
+                            <th>Score</th>
+                            <th>Document Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Class 10<sup>th</sup></td>
+                            <td>ICSE</td>
+                            <td>2023</td>
+                            <td>81.0%</td>
+                            <td><a href="10thMarksheet.jpeg" target="_blank" class="action-link">View Marksheet</a></td>
+                        </tr>
+                        <tr>
+                            <td>Class 12<sup>th</sup></td>
+                            <td>ICSE</td>
+                            <td>2025</td>
+                            <td>86.0%</td>
+                            <td><a href="12thMarksheet.pdf" target="_blank" class="action-link">View Marksheet</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Technical Skills Section -->
+            <section id="skills" class="card-box">
+                <h2>Technical Skills</h2>
+                <ul>
+                    <li><strong>Web Technologies</strong>
+                        <ol>
+                            <li>HTML5 (Semantic Page Layouts, Forms & Tables)</li>
+                            <li>CSS3 (Selectors, Box Models, Color Schemes, Absolute Units)</li>
+                            <li>Frontend and basic Backend Development</li>
+                        </ol>
+                    </li>
+                    <li><strong>Core Foundations</strong>
+                        <ul>
+                            <li>Cybersecurity Fundamentals & Network Security</li>
+                            <li>C Programming</li>
+                            <li>Python Basics</li>
+                            <li>Java Basics</li>
+                            <li>Graphic Design Basics (Canva)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Certifications Article -->
+            <article id="certificates" class="card-box">
+                <h2>Certifications & Achievements</h2>
+                <ol>
+                    <li><a href="certificate1.pdf" target="_blank" class="action-link">Ayushi Sharma Official Certification</a></li>
+                    <li><a href="certificate2.jpeg" target="_blank" class="action-link">Hack The Gram Tech Event Certificate</a></li>
+                    <li><a href="certificate3.jpeg" target="_blank" class="action-link">L&T Scientific Computing Certificate</a></li>
+                </ol>
+            </article>
+
+            <!-- Aside Notice -->
+            <aside>
+                <h3>Training Notice</h3>
+                <p><small>All marksheet and certificate attachments are linked to the local <code>training/</code> folder environment.</small></p>
+            </aside>
+
+            <!-- Hidden element demonstrating visibility property -->
+            <p class="draft-note">Instructor review verification token: verified_day6</p>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p><small>&copy; 2026 Ayushi Sharma &bull; Web Technology Lab &bull; Day 6</small></p>
+            <p><small>Contact: <a href="mailto:liesa9922@gmail.com" class="action-link">liesa9922@gmail.com</a></small></p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
